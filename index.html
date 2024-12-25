@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice Generation System</h1>
+        <form id="invoiceForm">
+            <h2>Customer Details</h2>
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" required>
+
+            <label for="customerAddress">Address:</label>
+            <input type="text" id="customerAddress" required>
+
+            <h2>Item Details</h2>
+            <div id="itemFields">
+                <div class="item">
+                    <label for="itemDescription">Description:</label>
+                    <input type="text" class="itemDescription" required>
+
+                    <label for="itemQuantity">Quantity:</label>
+                    <input type="number" class="itemQuantity" min="1" required>
+
+                    <label for="itemPrice">Price per Unit:</label>
+                    <input type="number" class="itemPrice" step="0.01" required>
+
+                    <label for="itemTax">Tax Rate (%):</label>
+                    <input type="number" class="itemTax" step="0.01" required>
+                </div>
+            </div>
+            <button type="button" id="addItem">Add Another Item</button>
+            <button type="submit">Generate Invoice</button>
+        </form>
+
+        <div id="invoiceDisplay" class="hidden">
+            <h2>Invoice Preview</h2>
+            <div id="invoiceContent"></div>
+            <button id="editInvoice">Edit</button>
+            <button id="downloadInvoice">Download</button>
+            <button id="printInvoice">Print</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
